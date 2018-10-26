@@ -1,0 +1,189 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Profile</a></li>
+					<li><!--Twitter--></li>
+					<li><!--Facebook--></li>
+				</ul>
+			</nav>
+
+			<div id='profile-panel'>
+				<div id='left'>
+					<ul width=100% height=100vh>
+						<li width=100% height=100vh><div id="cover1"></div></li>
+						<li width=100% height=100vh><div id="cover2"></div></li>
+						<li width=100% height=100vh><div id="cover3"></div></li>
+					</ul>
+				</div>
+				<div id='right'>
+					<center>
+						<form id= 'login'>
+							<div>
+								<input id='name' type='text' placeholder='Username...' />
+							</div>
+							<div>
+								<input id='email' type='email' placeholder="Email Id..." />
+							</div>
+							<div>
+								<input id='password' type='password' placeholder='Password...' />
+							</div>
+							<div>
+								<a href='#'>forgot my password??</a>
+							</div>
+							<input type='submit' value="Signin" /><br/>
+							<a class='goto'>Sign Up</a>
+						</form>
+						<form id= 'signup'>
+							<div>
+								<input id='name' type='text' placeholder='Username...' />
+							</div>
+							<div>
+								<input id='email' type='email' placeholder="Email Id..." />
+							</div>
+							<div>
+								<input id='password' type='password' placeholder='Password...' />
+							</div>
+							<div>
+								<input id='password' type='password' placeholder="Retype Password..." />
+							</div>
+							<div>
+								<input id='terms' type='checkbox' style='width:13px;height:13px;margin:0;padding:0;' >
+								<span style='color:white;'>Agree</span> <a href='#'>Terms and Condition</a><br/>
+							</div>
+							<input type='submit' value="Signup" /><br/>
+							<a class='goto'>Sign In</a>
+						</form>
+					</center>
+				</div>
+			</div>
+		</header>
+
+
+		<!---------------------------------------------------------------------------------------------------->
+		<style>
+		*{
+			margin		: 0;
+			padding		: 0;
+			box-sizing	: border-box;
+		}
+		/*--------------------------------------------*/
+		nav{
+			background-color: black;
+			width			: 100%;
+			height			: 50px;
+			position		: absolute;
+			z-index			: 1;
+		}
+		header nav ul{
+			padding			: 10px;
+		}
+		header nav ul li{
+			display		: inline;
+			list-style	: none;
+			margin		: 10px;
+		}
+		a{ 
+			color			: white;
+			border			: 1px transparent;
+			text-decoration	: none;
+			transition		: 1s border;
+		}
+		a:hover{
+			border-bottom	: 1px solid white;
+		}
+		/*--------------------------------------------*/
+		#profile-panel{
+			background-color: #2a2c30;
+		}
+		/*--------------------------------------------*/
+		#profile-panel{
+			width		: 100%;
+			height		: 100vh;
+		}
+		#profile-panel #right input::placeholder, #profile-panel input{
+			color		: white;
+		}
+		#profile-panel #right input{
+			background		: transparent;
+			border			: none;
+			border-bottom	: 1px solid grey;
+			margin			: 10px 0;
+			width			: 60%;
+			height			: 40px;
+		}
+		#profile-panel #right input[type=submit]{
+			background-color: #5d2c9e;
+			border			: white;
+			box-shadow		: 3px 3px #888888;
+		}
+		#right center:first-child{
+			margin-top		: 20vh;
+		}
+		#login{
+			display			: none;
+		}
+		#left,#right{
+			width		: 50%;
+			height		: 100vh;
+			float		: left;
+		}
+		#left li {list-style	: none;}
+		#cover1{
+			background-image	: linear-gradient(rgba(100,100,100,0.7),rgba(10,10,10,0.3)) , url('cover1.jpg');
+		}
+		#cover2{
+			background-image	: linear-gradient(rgba(100,100,100,0.7),rgba(10,10,10,0.3)) , url('cover2.jpg');
+		}
+		#cover3{
+			background-image	: linear-gradient(rgba(100,100,100,0.7),rgba(10,10,10,0.3)) , url('cover3.jpg');
+		}
+		#cover1,#cover2,#cover3{
+			background-position	: center;
+			background-repeat	: no-repeat;
+			background-size		: cover;
+			display				: none;
+			width				: 100%;
+			height				: 100vh;
+		}
+		</style>
+
+
+		<!--------------------------------------------------------------------------------->
+		<script
+			  src="http://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+		<script>
+			var signin=false;
+			$('.goto').click(function(){
+				if(signin){
+					$('#login').css('display','none');
+					$('#signup').css('display','none').fadeIn(1000);
+				}
+				else{
+					$('#signup').css('display','none');
+					$('#login').css('display','none').fadeIn(1000);
+				}
+				signin=!signin;
+			});
+			var current=0,delayInSec=10;
+			function slideshow(){
+				current = (current%3)+1;
+				for(var i=1;i<=3;i++)
+				{
+					if(i!=current)
+						$('#left #'+'cover'+i.toString()).css('display','none');
+				}
+				$('#left #'+'cover'+current.toString()).css('display','none').fadeIn(1000);
+			}
+			slideshow();
+			setInterval(slideshow,delayInSec*1000);
+		</script>
+	</body>
+</html>

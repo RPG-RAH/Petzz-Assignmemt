@@ -1,0 +1,312 @@
+<html>
+	<head>
+		<title></title>
+		<!---Swiper Class: HTML---->
+		<link rel="stylesheet" href="swiper.min.css">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Profile</a></li>
+					<li><!--Twitter--></li>
+					<li><!--Facebook--></li>
+				</ul>
+			</nav>
+			<div id='profile-panel'>
+				<center>
+					<img src = './default_img.jpg' width=200px height=200px />
+					<div id='user'>
+						<button>Edit</button>
+						<div id='username'>Rahul Gautham</div>
+						<div id='email'>rahulgautham95@gmail.com</div>
+					</div>
+					<div id='edit-user'>
+						<input type='text' name='username' placeholder='Username...' />
+						<input type='email' name='email' placeholder='Email...' />
+						<input type='password' name='password' placeholder='Password...' /><br>
+						<button id='user-details'>Submit</button> <button>Cancel</button>
+					</div>
+				</center>
+			</div>
+			<div id='working-space'>
+				<!---Swiper Class: HTML---->
+				<div class="swiper-container" id="new-user">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">No New User Yet!!</div>
+					</div>
+					<!-- Add Arrows -->
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+				
+				<div id='crud'>
+					<center>
+						<div id='create'>
+							<input type='text' placeholder='Username...' />
+							<input type='text' placeholder='Password...' />
+							<input type='text' placeholder='City...' />
+							<input type='email' placeholder='Email...' />
+							<button id='add'>Add User</button>
+							<button id='reset'>Reset</button>
+						</div>
+					</center>
+					<div id='read'>
+							<table>
+							</table>
+					</div>
+				</div>
+				
+			</div>
+		</header>
+		<!----------------------------------------------------------------------------------------------------->
+
+
+		<style>
+		*{
+			margin		: 0;
+			padding		: 0;
+			box-sizing	: border-box;
+		}
+		/*--------------------------------------------*/
+		nav{
+			width		: 100%;
+			height		: 50px;
+		}
+		header nav ul{
+			padding		: 10px;
+			padding-left	: 30%;
+		}
+		header nav ul li{
+			display		: inline;
+			list-style	: none;
+			margin		: 10px;
+		}
+		a{ 
+			color		: white;
+			border		: 1px transparent;
+			text-decoration	: none;
+			transition	: 1s border;
+		}
+		a:hover{
+			border-bottom	: 1px solid white;
+		}
+		/*--------------------------------------------*/
+		nav,#profile-panel{
+			background-color: black;
+			position	: fixed;
+		}
+		/*--------------------------------------------*/
+		#profile-panel{
+			color		: white;
+			width		: 25%;
+			height		: 100vh
+		}
+		button{
+			color		: white;
+			background-color: transparent;
+			border-radius	: 15px;
+			padding		: 10px;
+			transition	: 1s background-color;
+		}
+		button:hover{
+			background-color: purple;
+		}
+		#profile-panel img{
+			margin-top	: 20vh;
+			margin-bottom	: 20px;
+			border-radius	: 50%;
+		}
+		/*--------------------------------------------*/
+		#profile-panel #user div{
+			margin		: 10px;
+		}
+		/*--------------------------------------------*/
+		#profile-panel #edit-user{
+			display		: none;
+		}
+		#profile-panel #edit-user input{
+			margin		: 5px;
+		}
+		/*--------------------------------------------*/
+		#working-space{
+			margin-left	: 25%;
+			padding-top	: 50px;
+			width		: 75%;
+		}
+		#working-space #new-user{
+			border		: 2px solid orange;
+			border-radius	: 20px;
+			margin		: 20px auto;
+			padding		: 20px;
+			width		: 90%;
+			height		: 30vh;
+			overflow	: hidden;
+		}
+		#working-space #create input{width : 20%;}
+		#working-space #create button{color: black;border-color:purple;}
+		#working-space #crud .update{color: white;background-color:black;}
+		#working-space #crud .delete{color: black;background-color:red;}
+		#read{margin-left:30px;}
+		#read table{width:90%;}
+		#read td {
+			width		: 20%;
+			padding-bottom	: 1%;
+			border-bottom 	: 1px solid black;
+		}
+		#crud td input{width:100%;}
+
+		.swiper-container {
+			width: 100%;
+			height: 30vh;
+		}
+		.swiper-slide {
+			text-align: center;
+			font-size: 18px;
+			background: #fff;
+			/* Center slide text vertically */
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			align-items: center;
+		}
+		</style>
+
+		<!----------------------------------------------------------------------------------------------------->
+		<script
+			  src="http://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+		<!---Swiper Class: Script---->
+		<script src="swiper.min.js"></script>
+
+		<script>
+			
+				$('#user button').on('click',function(){
+					$('#user').css('display','none');
+					$('#edit-user').css('display','none').fadeIn(1000);
+				});
+
+				$('#edit-user button').on('click',function(){
+					$('#edit-user').css('display','none');
+					$('#user').css('display','none').fadeIn(1000);
+				});
+				$('#user-details').on('click',function(){
+					//SHRINGARI : DONOT FOCUS ON JQUERY IF U DON'T KNW
+					//Try CRUD from Server using JavaScript : Function are Given already
+					//Get Current Admin Details
+
+					var data = $('#edit-user input');
+					var push_data=[]; //push_data : ['name','password','city','email']
+					for(var i=0;i<data.length;i++)
+					{
+						if(!data[i].value) return;
+						push_data.push(data[i].value);
+					}
+					//RAHUL
+					//Then Check Current password is matching with previous, if matching then carry out below statements
+						//REMOVE the previous user from server call : deleteFromServer(push_data)
+						//(SHRINGARI: Send push_data (Array consisting of user data) to server) call : 
+						//            sendToServer(push_data)
+						$('#username').html(data[0].value);
+						$('#email').html(data[1].value);
+						data[2].value='';
+				});
+
+				//SHRINGARI : Implement this ... Send User Details in server Database
+				function sendToServer(pushData){
+					//pushData Array contains User's details ['name','password','city','email']
+					//Send the data to database at server of CRUD
+				}
+
+				//Create
+				$('#add').on('click',function(){
+					var data = $('#create input');
+					var push_data=[];
+					var str='<tr>';
+					for(var i=0;i<data.length;i++)
+					{
+						if(!data[i].value) return;
+						push_data.push(data[i].value);
+						str+='<td><input value="'+data[i].value+'" disabled="disabled"></td>';
+
+						//(SHRINGARI:send user data server) call : sendToServer(push_data)
+					}
+					str+="<td><button data-edit='1' class='update'>Update</button></td>"+
+					"<td><button class='delete'>Delete</button></td>"+'</tr>';
+					$('#read table').append(str);
+				});
+				$('#reset').on('click',function(){
+					var data = $('#create input');
+					for(var i=0;i<data.length;i++)
+						data[i].value='';
+				});
+
+
+				//Read
+				function read_display(){
+				//Read Users From Server(NOTE FOR RAHUL:Local Storage)(SHRINGARI) and store each user in a Row(RAHUL)
+				}
+				
+				//Update
+				$(document).on('click','.update',function(){
+					if($(this).data('edit')=='1')
+						$(this).closest('tr').find('input').prop("disabled", false);
+					else
+					{
+						$(this).closest('tr').find('input').prop("disabled", true);
+						var push_data=[];
+						for(var i=0;i<data.length;i++)
+						{
+							if(!data[i].value) return;
+							push_data.push(data[i].value);
+						}
+						//Remove Old details of user(SHRINGARI), call : deleteFromServer()
+						//Add New Details details of user(SHRINGARI)
+					}
+					$(this).data('edit',($(this).data('edit')=='0')?'1':'0');
+				});
+
+				//Delete
+				$(document).on('click','.delete',function(){
+					var data = $(this).closest('tr').find('input');
+					var push_data=[];
+					for(var i=0;i<data.length;i++)
+					{
+						if(!data[i].value) return;
+						push_data.push(data[i].value);
+					}
+					$(this).closest('tr').remove();
+
+					//SHRINGARI
+					//Delete Old details, call : deleteFromServer(push_data)
+				});
+
+					//SHRINGARI
+				function deleteFromServer(){
+					//Call Code to delete From Server Here
+				}
+
+
+				//Slider Using Swiper Class			
+				var swiper = new Swiper('.swiper-container', {
+					navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+					},
+					slidesPerView: 4,
+					paginationClickable: true,
+					spaceBetween: 0
+				});
+		</script>
+	</body>
+</html>
