@@ -1,0 +1,164 @@
+Inky Code
+---------
+
+
+<container>
+  <!------------------------------------------------------------------------------------------------------------------------------->
+  <!--Whitespaces-->
+  <row>
+    <column>&nbsp;</column>
+  </row>
+  <row>
+    <column>&nbsp;</column>
+  </row>
+
+
+  <!------------------------------------------------------------------------------------------------------------------------------->
+  <!--Hurray Image Here....-->
+  <row>
+    <columns>
+        <center>
+          <img 	id='hurray-img' 
+		src='https://omgquotes.com/wp-content/uploads/2018/01/happy-birthday-quotes-ideas-hip-hip-hooray-its-a-glad-you-were-born-day-snoopy-woodstock.jpg' />
+        </center>
+    </columns>
+  </row>  
+
+  <!------------------------------------------------------------------------------------------------------------------------------->
+  <!--Welcome Message Starts Here On...-->
+  <row>
+    <columns>
+        Welcome <span id='username'></span>,
+    </columns>
+  </row>
+  <row>
+    <columns>
+	<p>
+		Thanks for joining our community of <strong>PETS VETERINARIANS</strong>!!. 
+		To make sure you get acquainted to our apps interface quickly and throughly,
+		here are some reference guides and links :
+	</p>
+    </columns>
+  </row>
+  <row>
+    <columns >
+      <img 	class='round-img' 
+		src="https://cdn.dribbble.com/users/215842/screenshots/1612642/guide_me_logo.jpg" />
+    </columns>
+    <columns>
+      <img 	class='round-img' 
+		src='http://icons-for-free.com/free-icons/png/512/312303.png' />
+    </columns>
+    <columns>
+      <img 	class='round-img' 
+		src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKvQqXhNH58nGXVxbEhy1naDIKd5NnVHI3_KbhEGfNO3QqUuJx"/>
+    </columns>
+  </row>
+
+  <!------------------------------------------------------------------------------------------------------------------------------->
+  <!--Second Paragraph Here...-->
+  <row>
+    <columns>
+	<p>
+		We hope you have a great adventure with <strong>Petzz.org</strong> and 
+		to fulfill our loyalty towards you, we are always there as an assisting 
+		guide and encouraging part of your success. Our Services are <strong>
+		24 x 7</strong> available.
+	</p>
+    </columns>
+  </row>
+
+  <!------------------------------------------------------------------------------------------------------------------------------->
+  <!--Regards Here...-->
+
+  <row>
+    <columns>
+      Onwards and Upwards,
+    </columns>
+  </row>
+
+  <row>
+    <columns>
+      Thank You
+    </columns>
+  </row>
+
+  <row>
+    <columns>
+      Petzz.org
+    </columns>
+  </row>
+
+  <!------------------------------------------------------------------------------------------------------------------------------->
+  <!--Contact Images Here...-->
+  <row>
+    <columns>
+      <center>
+	      <img class='icon-images' 
+		src='https://cdn4.iconfinder.com/data/icons/happily-colored-snlogo/512/gmail-email-mail-logo-circle-material.png'/>
+      </center>
+    </columns>
+    <columns>
+      <center>
+      <img class='icon-images' 
+	src='https://www.nsrcel.org/wp-content/uploads/2018/07/Petzz_Logo-Swetang-Sharma-1.png'/>
+      </center>
+    </columns>
+  </row>
+
+</container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+CSS EXTRA
+---------
+
+#hurray-img,
+.round-img {
+  border-radius : 20px;
+  overflow      : hidden;
+}
+.round-img{
+  width         : 160px;
+  height        : 125px; 
+  transition    : 2s transform;
+}
+.round-img:hover {
+  transform    : scale(1.07);
+}
+
+#hurray-img{
+  width       : 300px;
+  height      : 250px;
+}
+
+.icon-images{
+  width : 80px;
+  height: 70px;
+}
