@@ -1,0 +1,104 @@
+Inky Code
+---------
+
+
+<container>
+  <row>
+    <columns>&nbsp;</columns>
+  </row>
+    <!---------------------------------------------------------------------->      
+  <row>
+    <columns>
+      <center>
+      	<img id='hurray-img'  
+	src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwoZl1KBg2T15Yfuku6EFmV0BUSs9BUX8YA0l8VpPWCRdikvq1'/>
+      </center>
+    </columns>
+  </row>
+
+  <row>
+    <columns>
+      <h2 class='text-center'>
+        Password Reset
+      </h2>
+    </columns>
+  </row>
+
+    <!---------------------------------------------------------------------->      
+  <row>
+    <columns>
+      Hi <span id='username'></span>,
+    </columns>
+  </row>
+
+  <row>
+    <columns>
+      <p>Seems like you forgot your password. If this is true you can, 
+	 click the button below to get a reset.</p>
+    </columns>
+  </row>
+  
+  <row>
+    <columns>
+      <center>
+      <button>Reset Password</button>
+      </center>
+    </columns>
+  </row>
+
+  <row>
+    <columns>
+      <p>
+	If incase you haven't requested for a change or if you 
+	haven't forgotten the password, you can ignore this mail</p>
+    </columns>
+  </row>
+
+    <!---------------------------------------------------------------------->      
+  <row>
+    <columns>
+      <strong>Petzz.org</strong>
+    </columns>
+  </row>
+  
+    <!---------------------------------------------------------------------->  
+    <!--Contact Images Here...-->
+  <row>
+    <columns>
+      <center>
+	      <img class='icon-images' 
+		src='https://cdn4.iconfinder.com/data/icons/happily-colored-snlogo/512/gmail-email-mail-logo-circle-material.png'/>
+      </center>
+    </columns>
+    <columns>
+      <center>
+      <img class='icon-images' 
+	src='https://www.nsrcel.org/wp-content/uploads/2018/07/Petzz_Logo-Swetang-Sharma-1.png'/>
+      </center>
+    </columns>
+  </row>
+
+  <row>
+    <columns>&nbsp;</columns>
+  </row>  
+</container>
+
+
+
+
+------------------------------------------------------------------------------------------------
+
+Extra CSS Code
+--------------
+
+#hurray-img{
+  width       : 300px;
+  height      : 300px;
+  border-radius : 20px;
+  overflow      : hidden;
+}
+.icon-images{
+  width : 80px;
+  height: 70px;
+}
+
